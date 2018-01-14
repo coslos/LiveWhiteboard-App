@@ -41,7 +41,7 @@ public class Drawing extends AppCompatActivity {
         ibRed = findViewById(R.id.ibRed);
         ibGreen = findViewById(R.id.ibGreen);
         ibBlue = findViewById(R.id.ibBlue);
-        ibYellow = findViewById(R.id.ibYellow);
+//        ibYellow = findViewById(R.id.ibYellow);
         ibEraser = findViewById(R.id.ibEraser);
         ibSave = findViewById(R.id.ibSave);
         ibClear = findViewById(R.id.ibClear);
@@ -175,12 +175,12 @@ public class Drawing extends AppCompatActivity {
         });
 
 
-        ibYellow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawingCanvas.changeColor(Color.YELLOW);
-            }
-        });
+//        ibYellow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                drawingCanvas.changeColor(Color.YELLOW);
+//            }
+//        });
 
         ibEraser.setOnClickListener(new View.OnClickListener() {
             @Override
