@@ -59,3 +59,10 @@ The first prototype for the app is ready!
 
 * Prepring for the Mozilla Global Sprint 2018
 
+
+## Want to jump in?
+
+Checkout the Contributing.md (to be updated soon) and the CODE_OF_CONDUCT.md
+* Writing code: Ready to write some Java/Kotin with us? These issues are waiting for you!
+* Discuss: Join in on the discussion. Constructive feedback and suggestions on new features are always welcome :) 
+           You can create an issue in the repository or ping us on ag@cb.lk or b@cb.lk.
