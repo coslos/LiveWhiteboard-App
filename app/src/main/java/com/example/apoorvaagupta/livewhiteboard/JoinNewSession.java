@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,6 +21,8 @@ public class JoinNewSession extends AppCompatActivity {
     EditText etJoinSessionId;
     Button btnJoin;
 
+    AppStatus appStatus;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,35 +35,41 @@ public class JoinNewSession extends AppCompatActivity {
         btnJoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etJoinSessionId.getText().toString().trim().equalsIgnoreCase("")) {
-                    etJoinSessionId.setError("This field can not be blank");
-                }
-                try {
-                    JSONObject jsonObjectToSend = new JSONObject();
-                    jsonObjectToSend.put("sessionId", etJoinSessionId.getText().toString().trim());
-                    socket.connect();
-                    socket.emit("joinSession", jsonObjectToSend);
-                    socket.on("joinedSession", new Emitter.Listener() {
-                        @Override
-                        public void call(Object... args) {
-                            JSONObject jsonObject = (JSONObject) args[0];
-                            try {
-                                if (jsonObject.getBoolean("success")) {
-                                    Intent i = new Intent(JoinNewSession.this, Drawing.class);
-                                    i.putExtra("sessionId", jsonObject.getString("sessionId"));
-                                    startActivity(i);
+                if (appStatus.isOnline()){
+                    if (etJoinSessionId.getText().toString().trim().equalsIgnoreCase("")) {
+                        etJoinSessionId.setError("This field can not be blank");
+                    }
+                    try {
+                        JSONObject jsonObjectToSend = new JSONObject();
+                        jsonObjectToSend.put("sessionId", etJoinSessionId.getText().toString().trim());
+                        socket.connect();
+                        socket.emit("joinSession", jsonObjectToSend);
+                        socket.on("joinedSession", new Emitter.Listener() {
+                            @Override
+                            public void call(Object... args) {
+                                JSONObject jsonObject = (JSONObject) args[0];
+                                try {
+                                    if (jsonObject.getBoolean("success")) {
+                                        Intent i = new Intent(JoinNewSession.this, Drawing.class);
+                                        i.putExtra("sessionId", jsonObject.getString("sessionId"));
+                                        startActivity(i);
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             }
-                        }
-                    });
+                        });
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    //send request to the server and it is successful send intent to teh canvas activity.
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Please see to it that you have an active internet connection",
+                            Toast.LENGTH_LONG).show();
                 }
-                //send request to the server and it is successful send intent to teh canvas activity.
-            }
+                }
         });
     }
 }
