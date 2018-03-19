@@ -10,28 +10,28 @@ The Live Whiteboard app is a perfect solution for people to connect with each ot
 
 The first prototype for the app is ready!
 
-### Short Term Milestones - What we are working on now.
+### Short Term Milestones - What we are working on now:
 
-* Including a readme, code of conduct, contributing guide, changelog file to the repository.
+* Including a readme, code of conduct, contributing guide, changelog file to the repository
 
 * Documenting the existing project
-...The project right now contains just bare code. It needs to be documented so that others can easily understand the codebase and join in for contributing.
+  + The project right now contains just bare code. It needs to be documented so that others can easily understand the codebase and join in for contributing
    
 * Adding tests
-...Adding the unit tests and continuous integration tests to the existing project
+  + Adding the unit tests and continuous integration tests to the existing project
    
 * Releasing the first prototype on the playstore
 
-### Medium Term Milestones - What we are working on next.
+### Medium Term Milestones - What we are working on next:
 
-* Adding features for customisation of the canvas board.
+* Adding features for customisation of the canvas board
   + colours 
   + thickness 
   + strokes 
   + different eraser sizes
   + special feature like highlighting, etc
 
-* Adding features for saving own scribbles.
+* Adding features for saving own scribbles
   * Edit
   * Delete
   * Rename
@@ -45,7 +45,7 @@ The first prototype for the app is ready!
 
 * Adding support for automatic saving of the drawings
 
-### Long Term Milestones - will be working on this soon.
+### Long Term Milestones - will be working on this soon:
 
 * Add support for text chat along with drawing
 
@@ -57,7 +57,7 @@ The first prototype for the app is ready!
 
 * Extra features on suggestions from others/as we think of them
 
-* Prepring for the Mozilla Global Sprint 2018
+* Preparing for the Mozilla Global Sprint 2018
 
 
 ## Want to jump in?
