@@ -26,8 +26,8 @@ The first prototype for the app is ready!
 
 * Adding features for customisation of the canvas board.
   + colours 
-  + thickness, 
-  + strokes, 
+  + thickness 
+  + strokes 
   + different eraser sizes
   + special feature like highlighting, etc
 
