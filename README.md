@@ -34,6 +34,14 @@ Pull requests are always welcome!
 ## Reach Us
 Your feedbacks are always appreciated. You can reach out to us for any feature or issue. Hit us by reporting an issue here [Issues](https://github.com/coslos/LiveWhiteboard_App/issues) or mail us [Apoorvaa Gupta](mailto:ag@cb.lk) | [Bhavya Aggarwal](mailto:b@cb.lk).
 
-## License
+## [Project RoadMap](https://github.com/coslos/LiveWhiteboard_App/blob/master/ROADMAP.md)
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for more details.
+An outline and plan for the work ahead.
+
+## [Open Canvas](https://docs.google.com/presentation/d/1cP-f2NUDVxptU_bA-Z_fAHe70VovPo32C4wlPAEJBx8/edit?usp=sharing)
+
+Defines project's goals, strategy, and needs for resources.
+
+## [License](https://github.com/coslos/LiveWhiteboard_App/blob/master/LICENSE)
+
+This project is licensed under the MIT License.
