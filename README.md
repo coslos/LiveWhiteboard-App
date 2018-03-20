@@ -17,7 +17,15 @@ This is the source code for Live Whiteboard App, which allows us to draw in Real
 
 3) Build the app on your local server.
 
-4) Run the app in your Android Phone
+4) Run the app in your Android Phone.
+
+
+## Authors
+
+* **Apoorvaa Gupta** - *Project Lead* - [Github](https://github.com/apoorvaagupta)
+* **Bhavya Aggarwal** - *Project Lead* - [Github](https://github.com/bhavyaagg)
+
+Check [CONTRIBUTORS.md](CONTRIBUTORS.md) (Will be added soon) for all the contributors.
 
 ## Contributing
 
