@@ -22,3 +22,7 @@ This is the source code for Live Whiteboard App, which allows us to draw in Real
 ## Contributing
 
 Pull requests are always welcome!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more details.
