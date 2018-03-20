@@ -42,6 +42,10 @@ An outline and plan for the work ahead.
 
 Defines project's goals, strategy, and needs for resources.
 
+## Highlights
+
+- The project was selected for the [5th round of Mozilla Open Leaders](https://mozilla.github.io/leadership-training/round-5/projects/#live-whiteboard) program.
+
 ## [License](https://github.com/coslos/LiveWhiteboard_App/blob/master/LICENSE)
 
 This project is licensed under the MIT License.
