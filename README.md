@@ -34,9 +34,9 @@ Pull requests are always welcome!
 ## Reach Us
 Your feedbacks are always appreciated. You can reach out to us for any feature or issue. Hit us by reporting an issue here [Issues](https://github.com/coslos/LiveWhiteboard_App/issues) or mail us [Apoorvaa Gupta](mailto:ag@cb.lk) | [Bhavya Aggarwal](mailto:b@cb.lk).
 
-## [Code Of Conduct](https://github.com/coslos/LiveWhiteboard_App/blob/master/CODE_OF_CONDUCT.md)
+## [Code Of Conduct](https://github.com/coslos/LiveWhiteboard_App/blob/master/.github/CODE_OF_CONDUCT.md)
 
-## [Project RoadMap](https://github.com/coslos/LiveWhiteboard_App/blob/master/ROADMAP.md)
+## [Project RoadMap](https://github.com/coslos/LiveWhiteboard_App/blob/master/.github/ROADMAP.md)
 
 An outline and plan for the work ahead.
 
