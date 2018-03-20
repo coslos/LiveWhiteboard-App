@@ -31,6 +31,9 @@ Check [CONTRIBUTORS.md](CONTRIBUTORS.md) (Will be added soon) for all the contri
 
 Pull requests are always welcome!
 
+## Reach Us
+Your feedbacks are always appreciated. You can reach out to us for any feature or issue. Hit us by reporting an issue here [Issues](https://github.com/coslos/LiveWhiteboard_App/issues) or mail us [Apoorvaa Gupta](mailto:ag@cb.lk) | [Bhavya Aggarwal](mailto:b@cb.lk).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for more details.
