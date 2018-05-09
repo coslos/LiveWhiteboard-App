@@ -31,7 +31,7 @@ Check [CONTRIBUTORS.md](CONTRIBUTORS.md) (Will be added soon) for all the contri
 
 ## Contributing
 
-Pull requests are always welcome!
+Pull requests are always welcome! Check [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more.
 
 ## Reach Us
 Your feedbacks are always appreciated. You can reach out to us for any feature or issue. Hit us by reporting an issue here [Issues](https://github.com/coslos/LiveWhiteboard_App/issues) or mail us [Apoorvaa Gupta](mailto:ag@cb.lk) | [Bhavya Aggarwal](mailto:b@cb.lk).
