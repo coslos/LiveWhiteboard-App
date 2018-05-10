@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ibBlack"
+        android:title="Black"
+        android:icon="@drawable/ic_brush_black_36dp" />
+
+    <item
+        android:id="@+id/ibRed"
+        android:title="Red"
+        android:icon="@drawable/ic_brush_red_600_36dp"/>
+
+    <item
+        android:id="@+id/ibBlue"
+        android:title="Blue"
+        android:icon="@drawable/ic_brush_blue_700_36dp"/>
+
+    <item
+        android:id="@+id/ibGreen"
+        android:title="Green"
+        android:icon="@drawable/ic_brush_green_700_36dp"/>
+
+    <item
+        android:id="@+id/ibYellow"
+        android:title="Yellow"
+        android:icon="@drawable/ic_brush_yellow_500_36dp"/>
+
+
+
+</menu>

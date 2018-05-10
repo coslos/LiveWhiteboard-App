@@ -2,6 +2,8 @@ package com.example.apoorvaagupta.livewhiteboard;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Intent;
@@ -12,12 +14,15 @@ import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
@@ -25,7 +30,8 @@ import io.socket.emitter.Emitter;
 public class Drawing extends AppCompatActivity {
     public static final String TAG = "drawing";
 
-    ImageButton ibBlack, ibRed, ibGreen, ibBlue, ibYellow, ibEraser, ibSave, ibClear;
+    ImageButton brush, ibEraser, ibSave, ibClear;
+
     CanvasView drawingCanvas;
 
     Socket socket;
@@ -37,14 +43,11 @@ public class Drawing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing);
 
-        ibBlack = findViewById(R.id.ibBlack);
-        ibRed = findViewById(R.id.ibRed);
-        ibGreen = findViewById(R.id.ibGreen);
-        ibBlue = findViewById(R.id.ibBlue);
-        ibYellow = findViewById(R.id.ibYellow);
         ibEraser = findViewById(R.id.ibEraser);
         ibSave = findViewById(R.id.ibSave);
         ibClear = findViewById(R.id.ibClear);
+
+        brush = findViewById(R.id.brush_button);
 
         drawingCanvas = findViewById(R.id.drawing_canvas);
 
@@ -146,39 +149,57 @@ public class Drawing extends AppCompatActivity {
             }
         });
 
-        ibBlack.setOnClickListener(new View.OnClickListener() {
+        brush.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                drawingCanvas.changeColor(Color.BLACK);
-            }
-        });
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(Drawing.this,brush);
 
-        ibRed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawingCanvas.changeColor(Color.RED);
-            }
-        });
+                //To display the icons in the popup menu the following try catch method is required
+                try {
+                    Field[] fields = popupMenu.getClass().getDeclaredFields();
+                    for (Field field : fields) {
+                        if ("mPopup".equals(field.getName())) {
+                            field.setAccessible(true);
+                            Object menuPopupHelper = field.get(popupMenu);
+                            Class<?> classPopupHelper = Class.forName(menuPopupHelper
+                                    .getClass().getName());
+                            Method setForceIcons = classPopupHelper.getMethod(
+                                    "setForceShowIcon", boolean.class);
+                            setForceIcons.invoke(menuPopupHelper, true);
+                            break;
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-        ibBlue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawingCanvas.changeColor(Color.BLUE);
-            }
-        });
+                popupMenu.getMenuInflater().inflate(R.menu.popup_menu_brush,popupMenu.getMenu());
 
-        ibGreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawingCanvas.changeColor(Color.GREEN);
-            }
-        });
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()){
+                            case R.id.ibBlack:
+                                drawingCanvas.changeColor(Color.BLACK);
+                                break;
+                            case R.id.ibBlue:
+                                drawingCanvas.changeColor(Color.BLUE);
+                                break;
+                            case R.id.ibGreen:
+                                drawingCanvas.changeColor(Color.GREEN);
+                                break;
+                            case R.id.ibRed:
+                                drawingCanvas.changeColor(Color.RED);
+                                break;
+                            case R.id.ibYellow:
+                                drawingCanvas.changeColor(Color.YELLOW);
+                                break;
+                        }
+                        return true;
+                    }
+                });
 
-
-        ibYellow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawingCanvas.changeColor(Color.YELLOW);
+                popupMenu.show();
             }
         });
 
